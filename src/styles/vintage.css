@@ -1,0 +1,132 @@
+/* Vintage Typewriter Theme Styles */
+
+/* Typewriter cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+}
+
+/* Paper texture effect */
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vintage button hover effects */
+.vintage-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.vintage-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.vintage-button:hover::before {
+  left: 100%;
+}
+
+/* Typewriter text selection */
+.typewriter-text::selection {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.typewriter-text::-moz-selection {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+/* Vintage scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 1px solid #8B4513;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border: 1px solid #8B4513;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8860B;
+}
+
+/* Dark mode scrollbar */
+.dark-mode ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border: 1px solid #D4AF37;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border: 1px solid #B8860B;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #F4D03F;
+}
+
+/* Retro focus effects */
+.retro-focus:focus {
+  outline: 2px dashed #D4AF37;
+  outline-offset: 4px;
+}
+
+/* Vintage loading animation */
+@keyframes typewriter-loading {
+  0% { content: "LOADING"; }
+  25% { content: "LOADING."; }
+  50% { content: "LOADING.."; }
+  75% { content: "LOADING..."; }
+  100% { content: "LOADING"; }
+}
+
+.loading-dots::after {
+  animation: typewriter-loading 1.5s infinite;
+}
+
+/* Vintage shadows and borders */
+.vintage-shadow {
+  box-shadow: 3px 3px 0px rgba(139, 69, 19, 0.3);
+}
+
+.vintage-border {
+  border: 2px solid #8B4513;
+}
+
+/* Dark mode variants */
+.dark-mode .vintage-shadow {
+  box-shadow: 3px 3px 0px rgba(212, 175, 55, 0.3);
+}
+
+.dark-mode .vintage-border {
+  border: 2px solid #D4AF37;
+}
